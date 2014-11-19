@@ -1,0 +1,4 @@
+RecordVideoPlugin
+=================
+
+Records the video
