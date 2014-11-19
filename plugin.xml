@@ -21,6 +21,6 @@
             </feature>
         </config-file>
 
-        <source-file src="src/android/RecordVideo.java" target-dir="src/org/devgirl/record" />      
+        <source-file src="src/android/RecordVideo.java" target-dir="src/com/snipme/record" />      
      </platform>          
 </plugin>
