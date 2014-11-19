@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<plugin xmlns="http://www.phonegap.com/ns/plugins/1.0"
+           id="org.devgirl.record"
+      version="0.1.0">
+    <name>RecordVideo</name>
+    <description>Sample PhoneGap Record video Plugin</description>
+    <license>MIT</license>
+    <keywords>phonegap,record</keywords>
+
+
+    <js-module src="www/recordvideo.js" name="RecordVideo">
+        <clobbers target="window.recordvideo" />
+    </js-module>
+
+    <!-- android -->
+    <platform name="android">
+        <config-file target="res/xml/config.xml" parent="/*">
+            <feature name="RecordVideo">
+                <param name="android-package" value="org.devgirl.record.Record"/>
+            </feature>
+        </config-file>
+
+        <source-file src="src/android/RecordVideo.java" target-dir="src/org/devgirl/record" />      
+     </platform>          
+</plugin>
