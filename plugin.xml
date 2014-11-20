@@ -17,7 +17,7 @@
     <platform name="android">
         <config-file target="res/xml/config.xml" parent="/*">
             <feature name="RecordVideo">
-                <param name="android-package" value="com.snipme.record.Record"/>
+                <param name="android-package" value="com.snipme.record.RecordVideo"/>
             </feature>
         </config-file>
 

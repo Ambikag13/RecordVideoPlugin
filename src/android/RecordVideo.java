@@ -78,11 +78,21 @@ public class RecordVideo extends CordovaPlugin {
             return false;
         }*/
     	Log.i(TAG, "execute method");
-    	if(RECORD_VIDEO.equals("recordVideo")){
-    		recordVideo();
-    	}
-
-        return true;
+    	try{
+    		if(RECORD_VIDEO.equals("recordVideo")){
+        		Intent intent = new Intent(this.cordova.getActivity(), CameraActivity.class);
+        		this.cordova.getActivity().startActivity(intent);
+        		callbackContext.success();
+        		return true;
+        	}
+    		callbackContext.error("Invalid action");
+            return false;
+    	}catch(Exception e) {
+    	    System.err.println("Exception: " + e.getMessage());
+    	    callbackContext.error(e.getMessage());
+    	    return false;
+    	} 
+    	
     }
 
    
@@ -93,6 +103,7 @@ public class RecordVideo extends CordovaPlugin {
     private void recordVideo() {
     	Intent intent = new Intent(this.cordova.getActivity(), CameraActivity.class);
 		this.cordova.getActivity().startActivity(intent);
+		callbackContext.success();
     }
 
    
